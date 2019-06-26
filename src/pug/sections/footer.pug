@@ -1,0 +1,20 @@
+footer.footer
+    .footer__container
+        .footer__row
+            .footer__col.-copyright
+                .copyright
+                    .copyright__date &copy; 2019
+                    .copyright__info
+                        .copyright__site-name Владимир Астахов
+                        .copyright__site-type Личный сайт веб-разработчика
+            .footer__col.-other
+                +nav('menu', '-footer', !{menu}, 0)
+                .footer__row
+                    .footer__col.-left
+                        p.footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                        +social('-footer', !{social})
+                    .footer__col.-right
+                        blockquote.quote
+                            p.quote__message Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                            cite.quote__name Martin Golding
+

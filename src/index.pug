@@ -1,15 +1,18 @@
-include ./mixins.pug
+include ./mixins
+include ./pug/data/main
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang="")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Portfolio | main page
   body
-    .wrapper
-      .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+    include pug/sections/header
+    main
+      include pug/sections/about
+      include pug/sections/skills
+      include pug/sections/works
+      include pug/sections/about
+    include pug/sections/footer
