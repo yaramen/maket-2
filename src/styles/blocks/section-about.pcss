@@ -1,0 +1,49 @@
+.section-about {
+    position: relative;
+    margin-bottom: 145px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        display: block;
+        width: 100%;
+        height: 145px;
+
+        background-color: #0a001d;
+        clip-path: polygon(100% 0, 100% 25%, 70% 100%, 0 25%, 0 0);
+    }
+
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        width: 1038px;
+        margin: 0 auto;
+        padding: 0 30px 100px 30px;
+    }
+
+    &__profile {
+        width: 350px;
+    }
+
+    &__content {
+        width: 545px;
+    }
+
+    &__name {
+        margin-bottom: 28px;
+        font-size: 36px;
+        line-height: 48px;
+        font-weight: bold;
+    }
+
+    &__text {
+        margin-bottom: 90px;
+    }
+
+    &__text-quotation {
+        font-style: italic;
+    }
+}

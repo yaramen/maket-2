@@ -2,15 +2,15 @@ include table-profile
 -
     var tableData = [
         {
-            title: 'Проживаю',
+            title: 'Проживаю:',
             value: 'Новосибирск'
         },
         {
-            title: 'Возраст',
+            title: 'Возраст:',
             value: '27 лет'
         },
         {
-            title: 'Родился',
+            title: 'Родился:',
             value: '1 января 1991'
         },
     ];
@@ -18,5 +18,4 @@ include table-profile
 
 .profile
     +image('content/user.jpg', 'profile__avatar')
-    .profile__table
-        +table-profile(tableData)
+    +table-profile(tableData)

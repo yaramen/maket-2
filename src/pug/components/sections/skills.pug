@@ -1,14 +1,49 @@
 include ../skill-list
 -
-    var skillFrontend = ['HTML5', 'CSS3', 'Javascript', 'Jquery и Vue.js'];
-    var skillWorkflow = ['Git', 'Terminal', 'Gulp', 'Webpack'];
+    var skillFrontend = [
+        {
+            name: 'HTML5',
+            percent: 10
+        },
+        {
+            name: 'CSS3',
+            percent: 100
+        },
+        {
+            name: 'Javascript',
+            percent: 90
+        },
+        {
+            name: 'Jquery и Vue.js',
+            percent: 70
+        },
+    ];
+    var skillWorkflow = [
+        {
+            name: 'Git',
+            percent: 30
+        },
+        {
+            name: 'Terminal',
+            percent: 60
+        },
+        {
+            name: 'Gulp',
+            percent: 30
+        },
+        {
+            name: 'Webpack',
+            percent: 70
+        },
+    ];
 
 section.section-skills
     .container
-        h2.section-skills__title.title Чем я могу быть полезен вам
-        p.section-skills__desc Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-        .section-skills__graphic-status
-            .section-skills__frontend
-                +skill-list('Front-end', skillFrontend)
-            .section-skills__workflow
-                +skill-list('Workflow', skillWorkflow)
+        .section-skills__wrap
+            h2.section-skills__title.title Чем я могу быть полезен вам
+            p.section-skills__desc.text.-black Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            .section-skills__graphic-status
+                .section-skills__frontend
+                    +skill-list('Front-end', skillFrontend)
+                .section-skills__workflow
+                    +skill-list('Workflow', skillWorkflow)

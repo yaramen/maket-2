@@ -2,5 +2,10 @@ mixin skill-list(title, skills)
     .skill-list
         h3.skill-list__title #{title}
         ul.skill-list__collection
-            each skill in skills
-                li.skill-list__item #{skill}
+            each skill, i in skills
+                li.skill-list__item
+                    .skill-list__text #{skill.name}
+                    svg.skill-list__svg(viewBox="0 0 100 100" preserveAspectRatio="none")
+                        circle(cx=50 cy=50 r=44 class="skill-list__circle -under")
+                        circle(cx=50 cy=50 r=44 class="skill-list__circle -above" style=`animation-delay:-${skill.percent}s`)
+

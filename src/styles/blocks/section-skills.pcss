@@ -1,0 +1,39 @@
+.section-skills {
+    padding: 135px 0;
+    background: url(/src/images/content/skills-bg.png) left 40% no-repeat;
+
+    &__wrap {
+        position: relative;
+        padding-left: 504px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: -570px;
+            left: -30px;
+
+            display: block;
+            width: 504px;
+            height: 1154px;
+            background: url(/src/images/content/guitar.png) right bottom no-repeat;
+            pointer-events: none;
+        }
+    }
+
+    &__title {
+        color: $title-color;
+        font-size: 30px;
+        line-height: 36px;
+        font-weight: bold;
+        margin-bottom: 50px;
+    }
+
+    &__desc {
+        max-width: 600px;
+        margin-bottom: 50px;
+    }
+
+    &__graphic-status {
+        padding: 30px 96px 30px 123px;
+    }
+}
