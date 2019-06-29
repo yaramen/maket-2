@@ -1,0 +1,58 @@
+.welcome {
+    position: relative;
+    height: calc(100vh - 100px);
+    font-size: 18px;
+
+    &__content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -100px;
+        transform: translate(-50%);
+    }
+
+    &__title {
+        font-size: 72px;
+        line-height: 60px;
+        font-weight: 800;
+    }
+
+    &__sub-title {
+        position: absolute;
+        right: 100%;
+        top: 0;
+        margin-right: 65px;
+        min-width: 220px;
+
+        font-size: 18px;
+        line-height: 30px;
+        text-align: right;
+        opacity: 0.4;
+    }
+
+    &__scroll {
+        position: absolute;
+        left: 50%;
+        bottom: 100px;
+
+        transform: translateX(-50%);
+    }
+
+    &__scroll-btn {
+        display: flex;
+        align-items: center;
+        font: inherit;
+        color: inherit;
+        background-color: transparent;
+    }
+
+    &__scroll-text {
+        margin-right: 10px;
+    }
+
+    &__scroll-icon {
+        height: 30px;
+        width: auto;
+        fill: $text-add-color;
+    }
+}
