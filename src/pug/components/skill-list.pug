@@ -1,0 +1,6 @@
+mixin skill-list(title, skills)
+    .skill-list
+        h3.skill-list__title #{title}
+        ul.skill-list__collection
+            each skill in skills
+                li.skill-list__item #{skill}

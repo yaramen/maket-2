@@ -1,0 +1,10 @@
+mixin table-profile(tableData)
+    table.table
+        thead.table__thead
+            tr.table__header
+               each entry in tableData
+                    th.table__title #{entry.title}
+        tbody.table__tbody
+            tr.table__values
+                each entry in tableData
+                    td.table__value #{entry.value}

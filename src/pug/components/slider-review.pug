@@ -1,0 +1,26 @@
+.slider-review
+    .slider-review__leaf
+        .slider-review__leaf-btn.-prev
+            +icon('arrow-down', 'review__leaf-icon')
+        .slider-review__leaf-btn.-next
+            +icon('arrow-down', 'review__leaf-icon')
+    ul.slider-review__list
+        li.slider-review__item
+            blockquote.slider-review__content
+                p.slider-review__message Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                .slider-review__footer
+                    .slider-review__avatar
+                        +image('content/user.jpg', 'review__picture')
+                    cite.slider-review__author
+                        .slider-review__name Ковальчук Дмитрий
+                        .slider-review__role Основатель Loftschool
+        li.slider-review__item
+            blockquote.slider-review__content
+                p.slider-review__message Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                .slider-review__footer
+                    .slider-review__avatar
+                        +image('content/user.jpg', 'review__picture')
+                    cite.slider-review__author
+                        .slider-review__name Владимир Сабанцев
+                        .slider-review__role Преподаватель
+

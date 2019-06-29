@@ -1,0 +1,11 @@
+form.form
+    .form__group
+        label.form__lable(for="name") Введите ваше имя
+        input.form__field(type="text" id="name" placeholder="Вася")
+    .form__group
+        label.form__lable(for="email") Введите ваше email
+        input.form__field(type="text" id="email" placeholder="example@email.com")
+    .form__group.-full
+        label.form__lable(for="message") Сообщение к письму
+        input.form__field(type="text" id="message" placeholder="Текст...")
+    button.form__btn.btn.-send Отправить

@@ -1,18 +1,16 @@
 include ./mixins
-include ./pug/data/main
 
 <!DOCTYPE html>
-html(lang="")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Portfolio | main page
   body
-    include pug/sections/header
+    include pug/components/sections/scene-parallax
     main
-      include pug/sections/about
-      include pug/sections/skills
-      include pug/sections/works
-      include pug/sections/about
-    include pug/sections/footer
+      include pug/components/sections/skills
+      include pug/components/sections/works
+      include pug/components/sections/drum-parallax
+    include pug/components/sections/footer

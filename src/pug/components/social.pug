@@ -1,0 +1,23 @@
+-
+    var social = [
+        {
+            link: '#insta',
+            icon: 'insta'
+        },
+        {
+            link: '#vk',
+            icon: 'vk'
+        },
+        {
+            link: '#github',
+            icon: 'github'
+        }
+    ];
+
+mixin social(modifier)
+    nav(class=`social ${modifier}`)
+        ul.social__list
+            each item in social
+                li.social__item
+                    a.social__link(href=item.link)
+                        +icon(item.icon, `social__icon`)

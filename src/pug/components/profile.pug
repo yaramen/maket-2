@@ -1,0 +1,22 @@
+include table-profile
+-
+    var tableData = [
+        {
+            title: 'Проживаю',
+            value: 'Новосибирск'
+        },
+        {
+            title: 'Возраст',
+            value: '27 лет'
+        },
+        {
+            title: 'Родился',
+            value: '1 января 1991'
+        },
+    ];
+
+
+.profile
+    +image('content/user.jpg', 'profile__avatar')
+    .profile__table
+        +table-profile(tableData)

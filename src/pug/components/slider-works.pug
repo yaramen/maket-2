@@ -1,0 +1,57 @@
+include ../../mixins
+-
+    var sliderWorks = [
+        {
+            picture: 'content/works/1-big.jpg',
+            thumb: 'content/works/1-small.jpg',
+            title: 'Сайт школы образования',
+            desc: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!',
+            link: '#',
+            tags: ['html', 'css', 'javascript']
+        },
+        {
+            picture: 'content/works/1-big.jpg',
+            thumb: 'content/works/1-small.jpg',
+            title: 'Сайт школы образования',
+            desc: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!',
+            link: '#',
+            tags: ['html', 'css', 'javascript']
+        },
+        {
+            picture: 'content/works/1-big.jpg',
+            thumb: 'content/works/1-small.jpg',
+            title: 'Сайт школы образования',
+            desc: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!',
+            link: '#',
+            tags: ['html', 'css', 'javascript']
+        }
+    ];
+
+.slider-works
+    .slider-works__controls
+        ul.slider-works__toggle-list
+            each item in sliderWorks
+                li.slider-works__toggle-item
+                    button.slider-works__toggle-btn
+                        +image(item.picture, 'slider-works__thumbs')
+        .slider-works__leaf
+            .slider-works__leaf-btn.-next
+                +icon('arrow-down', 'slider-works__icon-point')
+                span.visually-hidden Следующий
+            .slider-works__left-btn.-prev
+                +icon('arrow-down', 'slider-works__icon-point')
+                span.visually-hidden Предыдущий
+    ul.slider-works__list
+        each item in sliderWorks
+            li.slider-works__item
+                .slider-works__view
+                    +image(item.picture, 'slider-works__picture')
+                .slider-works__content
+                    .slider-works__tags
+                        each tag in item.tags
+                            .slider-works__tag #{tag}
+                    .slider-works__title #{item.title}
+                    .slider-works__desc #{item.desc}
+                    .slider-works__link
+                        +icon('link', 'slider-works__icon-link')
+                        .link(href=`${item.link}`) Посмотреть сайт

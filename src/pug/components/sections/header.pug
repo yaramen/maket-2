@@ -1,0 +1,9 @@
+include ../menu
+include ../social
+
+header.header
+    .container
+        .header__panel
+            include ../logo
+            +menu('-header', 0)
+            +social('-header', social)

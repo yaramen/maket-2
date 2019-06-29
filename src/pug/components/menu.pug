@@ -1,0 +1,16 @@
+-
+    var menu = [
+        'Главная',
+        'Обо мне',
+        'Навыки',
+        'Работы',
+        'Отзывы',
+        'Связаться'
+    ];
+
+mixin menu(modifier, activeIndex)
+    nav(class=`menu ${modifier}`)
+        ul(class=`menu__list`)
+            each item, i in menu
+                li(class=`menu__item ${i === activeIndex ? '-active' : ''}`)
+                    a(class=`menu__link`)= item

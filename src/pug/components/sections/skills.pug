@@ -1,0 +1,14 @@
+include ../skill-list
+-
+    var skillFrontend = ['HTML5', 'CSS3', 'Javascript', 'Jquery и Vue.js'];
+    var skillWorkflow = ['Git', 'Terminal', 'Gulp', 'Webpack'];
+
+section.section-skills
+    .container
+        h2.section-skills__title.title Чем я могу быть полезен вам
+        p.section-skills__desc Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .section-skills__graphic-status
+            .section-skills__frontend
+                +skill-list('Front-end', skillFrontend)
+            .section-skills__workflow
+                +skill-list('Workflow', skillWorkflow)
