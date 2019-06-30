@@ -3,20 +3,19 @@ include ../social
 
 footer.footer
     .container
-        .footer__row
+        .footer__wrap
             .footer__owner
                 .footer__copyright &copy; 2019
                 .footer__site-info
-                    .copyright__site-name Владимир Астахов
-                    .copyright__site-type Личный сайт веб-разработчика
+                    .footer__site-name Владимир Астахов
+                    .footer__site-type.text Личный сайт<br> веб-разработчика
             .footer__other
-                +menu('menu', '-footer', 0)
+                +menu('-footer', 0)
                 .footer__row
                     .footer__social-link
-                        p.footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
-                        +social('-header')
-                    .footer__quote
-                        blockquote.quote
-                            p.quote__message Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                            cite.quote__name Martin Golding
+                        p.footer__text.text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                        +social('-footer')
+                    blockquote.footer__quote
+                        p.footer__quote-message.text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                        cite.footer__qoute-authtor Martin Golding
 
