@@ -13,4 +13,4 @@ mixin menu(modifier, activeIndex)
         ul(class=`menu__list`)
             each item, i in menu
                 li(class=`menu__item ${i === activeIndex ? '-active' : ''}`)
-                    a(class=`menu__link`)= item
+                    a(class=`menu__link` href="#")= item

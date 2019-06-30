@@ -74,6 +74,12 @@
         font-size: 18px;
         color: #4b6fd7;
         font-weight: bold;
+        text-decoration: none;
+        outline: none;
+        
+        &:hover, &:focus {
+            text-decoration: underline;
+        }
     }
 
     &__icon-link {
@@ -129,12 +135,31 @@
     }
 
     &__toggle-btn {
+        position: relative;
         display: block;
         width: 100%;
         height: 100%;
         margin: 0;
         padding: 0;
         outline: none;
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            pointer-events: none;
+        }
+
+        &:focus, &:hover {
+            &:before {
+                background-color: rgba(#5500f2, 0.3);
+            }
+        }
     }
 
     &__leaf {
@@ -155,10 +180,8 @@
         background-color: #2d3c4e;
         outline: none;
 
-        &:hover {
-            .slider-works__icon-point {
-                opacity: 0.5;
-            }
+        &:hover, &:focus {
+            background-color: #5500f2;
         }
 
         &.-prev {

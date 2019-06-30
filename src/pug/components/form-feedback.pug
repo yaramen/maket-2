@@ -1,11 +1,17 @@
 form.form
     .form__group
-        label.form__lable.-name(for="name") Введите ваше имя
-        input.form__field(type="text" id="name" placeholder="Вася")
+        label.form__label.-name(for="name") Введите ваше имя
+        .form__field-icon
+            input.form__field(type="text" id="name" placeholder="Вася")
+            +icon("user", "form__icon")
     .form__group
-        label.form__lable.-email(for="email") Введите ваше email
-        input.form__field(type="text" id="email" placeholder="example@email.com")
+        label.form__label.-email(for="email") Введите ваше email
+        .form__field-icon
+            input.form__field(type="text" id="email" placeholder="example@email.com")
+            +icon("envelope", "form__icon")
     .form__group.-full
-        label.form__lable.-message(for="message") Сообщение к письму
-        textarea.form__field.-area(id="message" placeholder="Текст...")
+        label.form__label.-message(for="message") Сообщение к письму
+        .form__field-icon
+            textarea.form__field.-area(id="message" placeholder="Текст...")
+            +icon("message", "form__icon")
     button.form__btn.btn.-send Отправить

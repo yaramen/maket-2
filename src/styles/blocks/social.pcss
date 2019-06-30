@@ -13,6 +13,14 @@
     &__link {
         display: block;
         height: 26px;
+        outline: none;
+
+        &:hover, &:focus {
+            .social__icon {
+                fill: #5500f2;
+
+            }
+        }
     }
 
     &__icon {
@@ -36,6 +44,10 @@
             height: 50px;
             border: 1px solid rgba(#fff, 0.5);
             border-radius: 50%;
+
+            &:hover, &:focus {
+                border-color: #5500f2;
+            }
         }
 
         .social__icon {

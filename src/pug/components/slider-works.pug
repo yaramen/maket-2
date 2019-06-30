@@ -69,6 +69,6 @@ include ../../mixins
                             .slider-works__tag #{tag}
                     h3.slider-works__title.title #{item.title}
                     p.slider-works__desc.text-black #{item.desc}
-                    a.slider-works__link
+                    a.slider-works__link(href=`${item.link}`)
                         +icon('link', 'slider-works__icon-link')
-                        .link(href=`${item.link}`) Посмотреть сайт
+                        .link Посмотреть сайт

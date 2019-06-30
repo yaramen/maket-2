@@ -5,8 +5,14 @@
     }
 
     &__link {
+        text-decoration: none;
         display: block;
         padding: 10px 30px;
+        outline: none;
+
+        &:hover, &:focus {
+            opacity: 0.5;
+        }
     }
 
     &.-footer {
