@@ -18,7 +18,21 @@
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: #f8f8f8;
+        background-color: $section-work-bg;
+
+        &:before {
+            content: attr(data-slider-number);
+            position: absolute;
+            top: 30px;
+            right: 325px;
+            z-index: -1;
+            display: block;
+            color: $number-slide-color;
+            font-size: 400px;
+            line-height: 1;
+            font-weight: 800;
+        }
+
         &.-active {
             z-index: 2;
         }
@@ -45,11 +59,11 @@
 
     &__tag {
         padding: 12px 20px;
-        color: #283340;
+        color: $tag-font-color;
         font-size: 15px;
         font-weight: 600;
         border-radius: 45px;
-        background-color: #ebeff3;
+        background-color: $tag-bg-color;
 
         &:not(:last-child) {
             margin-right: 15px;
@@ -72,7 +86,7 @@
         display: flex;
         align-items: center;
         font-size: 18px;
-        color: #4b6fd7;
+        color: $links-color;
         font-weight: bold;
         text-decoration: none;
         outline: none;
@@ -85,7 +99,7 @@
     &__icon-link {
         width: 15px;
         margin-right: 20px;
-        fill: #4b6fd7;
+        fill: $links-color;
     }
 
     &__controls {
@@ -107,7 +121,7 @@
             bottom: 3px;
             left: 3px;
             right: 3px;
-            box-shadow: 0 0 20px -3px #000;
+            box-shadow: 0 0 20px -3px $slider-shadow-color;
         }
     }
 
@@ -119,11 +133,11 @@
 
     &__toggle-item {
         min-width: 178px;
-        height: 106px;
+        height: 100px;
         outline: 3px solid transparent;
 
         &.-active {
-            outline: 3px solid #f29400;
+            outline: 3px solid $border-color;
             z-index: 1;
         }
     }
@@ -157,7 +171,7 @@
 
         &:focus, &:hover {
             &:before {
-                background-color: rgba(#5500f2, 0.3);
+                background-color: rgba($focus-color, 0.3);
             }
         }
     }
@@ -177,11 +191,11 @@
         justify-content: center;
 
         flex-grow: 1;
-        background-color: #2d3c4e;
+        background-color: $point-bg-color;
         outline: none;
 
         &:hover, &:focus {
-            background-color: #5500f2;
+            background-color: $focus-color;
         }
 
         &.-prev {
@@ -190,7 +204,7 @@
     }
 
     &__icon-point {
-        fill: #fff;
+        fill: $text-color;
         width: 10px;
         height: 10px;
     }

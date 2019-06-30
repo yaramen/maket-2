@@ -60,7 +60,7 @@ include ../../mixins
                 span.visually-hidden Предыдущий
     ul.slider-works__list
         each item, i in sliderWorks
-            li(class=`slider-works__item ${i === 0 ? '-active' : ''}`)
+            li(class=`slider-works__item ${i === 0 ? '-active' : ''}` data-slider-number=`${i + 1}`)
                 .slider-works__view
                     +image(item.picture, 'slider-works__picture')
                 .slider-works__content

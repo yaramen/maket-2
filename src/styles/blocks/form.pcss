@@ -21,12 +21,12 @@
         min-height: 45px;
         padding-left: 45px;
         padding-bottom: 20px;
-        color: #fff;
+        color: $text-color;
         font: inherit;
         font-weight: bold;
         font-size: 18px;
         border: none;
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid $text-color;
         background-color: transparent;
         outline: none;
         cursor: pointer;
@@ -36,16 +36,9 @@
         }
 
         &:focus, &:hover {
-            border-bottom-color: #5500f2;
+            border-bottom-color: $focus-color;
             & + .form__icon {
-                fill: #5500f2;
-            }
-        }
-
-        &:invalid {
-            border-bottom-color: #cd1515;
-            & + .form__icon {
-                fill: #cd1515;
+                fill: $focus-color;
             }
         }
     }
@@ -62,7 +55,7 @@
         top: 0;
         width: 30px;
         height: 30px;
-        fill: rgba(#fff, 0.3);
+        fill: rgba($text-color, 0.3);
     }
 
     &__label {
@@ -70,7 +63,7 @@
         padding-bottom: 20px;
         padding-left: 45px;
 
-        color: rgba(#fff, 0.5);
+        color: rgba($text-color, 0.5);
         font-weight: 600;
         font-size: 16px;
     }

@@ -6,6 +6,9 @@ mixin skill-list(title, skills)
                 li.skill-list__item
                     .skill-list__text #{skill.name}
                     svg.skill-list__svg(viewBox="0 0 100 100" preserveAspectRatio="none")
+                        linearGradient#linear(x1="0%" y1="0%" x2="0%" y2="100%")
+                            stop(offset="0%" stop-color="rgba(0,139,245,0.62)")
+                            stop(offset="100%" stop-color="#0058ed")
                         circle(cx=50 cy=50 r=44 class="skill-list__circle -under")
-                        circle(cx=50 cy=50 r=44 class="skill-list__circle -above" style=`animation-delay:-${skill.percent}s`)
+                        circle(cx=50 cy=50 r=44 stroke="url(#linear)" class="skill-list__circle -above" style=`animation-delay:-${skill.percent}s`)
 
