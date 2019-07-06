@@ -1,4 +1,26 @@
-.scene-parallax(style=`background-image: url(${require('images/content/scene-parallax-bg.jpg')})`)
+.scene-parallax
+    //(style=`background-image: url(${require('images/content/scene-parallax-bg.jpg')})`)
+    .scene-parallax__layer-list
+        .scene-parallax__layer
+            +image("content/parallax/parallax_1.png", "scene-parallax__image")
+        .scene-parallax__layer(data-speed="0.3")
+            +image("content/parallax/parallax_2.png", "scene-parallax__image")
+        .scene-parallax__layer(data-speed="0.4")
+            +image("content/parallax/parallax_3.png", "scene-parallax__image")
+        .scene-parallax__layer(data-speed="0.16")
+            +image("content/parallax/parallax_4.png", "scene-parallax__image")
+        .scene-parallax__layer(data-speed="0.6")
+            +image("content/parallax/parallax_5.png", "scene-parallax__image")
+        .scene-parallax__layer(data-speed="0.22")
+            +image("content/parallax/parallax_6.png", "scene-parallax__image")
+        .scene-parallax__layer
+            +image("content/parallax/parallax_7.png", "scene-parallax__image")
+        .scene-parallax__layer.scene-parallax__particles
+            +image("content/parallax/parallax_8.png", "scene-parallax__image")
+        .scene-parallax__layer(data-speed="0.3")
+            +image("content/parallax/parallax_9.png", "scene-parallax__image")
+
+
     include header
     include welcome
     include about

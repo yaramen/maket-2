@@ -5,3 +5,4 @@ if (process.env.NODE_ENV === "development") {
 
 import "./pug/components/skills/skills";
 import "./pug/components/reviews/reviews";
+import "./scripts/scene-parallax";
