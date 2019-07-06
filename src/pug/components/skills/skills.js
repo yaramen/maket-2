@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import skills from './../pug/components/skills/skills';
+import skills from './data';
 
 const skill = {
   template: "#skill",

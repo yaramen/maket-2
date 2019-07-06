@@ -1,0 +1,18 @@
+script(type="text/x-template" id="reviews")
+    .slider-review
+        .slider-review__leaf
+            button.slider-review__leaf-btn.-prev(@click="prev()")
+                +icon('arrow-down', 'slider-review__leaf-icon')
+            button.slider-review__leaf-btn.-next(@click="next()")
+                +icon('arrow-down', 'slider-review__leaf-icon')
+        .slider-review__list
+            flickity(ref="flickity" :options="flickityOptions")
+                .slider-review__item.carousel-cell(v-for="review in reviews")
+                    blockquote.slider-review__content
+                        p.slider-review__message.text {{review.message}}
+                        .slider-review__footer
+                            .slider-review__avatar
+                                img.slider-review__picture(:src="review.avatar")
+                            cite.slider-review__author
+                                .slider-review__name {{review.name}}
+                                .slider-review__role {{review.role}}

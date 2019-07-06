@@ -3,4 +3,5 @@ if (process.env.NODE_ENV === "development") {
   require("file-loader!./index.pug");
 }
 
-import "./scripts/skills";
+import "./pug/components/skills/skills";
+import "./pug/components/reviews/reviews";
