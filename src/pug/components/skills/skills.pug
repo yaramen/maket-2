@@ -1,0 +1,34 @@
+script(type="text/x-template" id="skills-template")
+    .section-skills__graphic-status
+        .section-skills__item(v-for="skillGroupList in skills")
+            skills-group(
+                :skillGroupList="skillGroupList"
+            )
+
+
+script(type="text/x-template" id="skills-group")
+    .skill-list
+        h3.skill-list__title {{skillGroupList.title}}
+        skill-list(
+            :skills="skillGroupList.skills"
+        )
+
+
+script(type="text/x-template" id="skill-list")
+    ul.skill-list__collection
+        li.skill-list__item(v-for="(percent, skillName) in skills")
+            skill(
+                :name="skillName"
+                :percent="percent"
+            )
+
+
+script(type="text/x-template" id="skill")
+    li.skill-list__item
+        .skill-list__text {{name}}
+        svg.skill-list__svg(viewBox="0 0 100 100" preserveAspectRatio="none")
+            linearGradient#linear(x1="0%" y1="0%" x2="100%" y2="0%")
+                stop(offset="0%" stop-color="#0089f2")
+                stop(offset="100%" stop-color="#003dea")
+            circle(cx=50 cy=50 r=44 class="skill-list__circle -under")
+            circle(cx=50 cy=50 r=44 stroke="url(#linear)" class="skill-list__circle -above" :style="`animation-delay:-${percent}s`")
