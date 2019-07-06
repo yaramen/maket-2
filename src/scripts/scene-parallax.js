@@ -5,7 +5,7 @@ const layers = [...parallax.children];
 
 window.addEventListener("scroll", e => {
   const yScroll = window.pageYOffset;
-  if(layers) {
+  if(layers && parallaxContainer.clientHeight > yScroll) {
     layers.forEach(layer => {
       const divider = layer.dataset.speed;
       const strafe = yScroll * divider;

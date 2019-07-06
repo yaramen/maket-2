@@ -1,3 +1,12 @@
-.drum-parallax(style=`background-image: url(${require('images/content/drum-bg.jpg')})`)
+.drum-parallax
+    .drum-parallax__layer-list(style=`background-image: url(${require('images/content/parallax2/bg.jpg')})`)
+        .drum-parallax__layer(data-speed=0.05)
+            +image("content/parallax2/smoke.png", "drum-parallax__image")
+        .drum-parallax__layer(data-speed=0.15)
+            +image("content/parallax2/drum.png", "drum-parallax__image")
+        .drum-parallax__layer(data-speed=0.25)
+            +image("content/parallax2/men.png", "drum-parallax__image")
+        .drum-parallax__layer
+
     include review
     include feedback
