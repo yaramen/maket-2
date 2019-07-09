@@ -1,8 +1,19 @@
 .section-works {
     background-color: $section-work-bg;
     padding: 135px 0 150px 0;
+    @include phones() {
+        padding: 80px 0;
+    }
 
     &__title {
         margin-bottom: 90px;
+
+        @include desktop() {
+            margin-bottom: 55px;
+        }
+
+        @include tablets() {
+            margin-bottom: 55px;
+        }
     }
 }

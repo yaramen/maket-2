@@ -2,10 +2,29 @@
     padding: 135px 0 80px 0;
     background: no-repeat left 40%;
 
+    @include tablets() {
+        background-position: bottom center;
+        background-size: 500px;
+    }
+
+    @include phones() {
+        overflow: hidden;
+    }
+
     &__wrap {
         position: relative;
         padding-left: 504px;
 
+        @include desktopL() {
+            padding-left: 280PX;
+        }
+
+        @include tablets() {
+            display: flex;
+            flex-direction: column;
+            padding-left: 0;
+            text-align: center;
+        }
     }
 
     &__guitar {
@@ -16,25 +35,85 @@
         display: block;
         width: 504px;
         height: 1154px;
-        background: right bottom no-repeat;
+        background: url(~images/content/guitar.png) right bottom no-repeat;
         pointer-events: none;
+
+        @include desktopL() {
+            height: 900PX;
+            top: -250px;
+            left: -100px;
+            background-size: contain;
+            background-position: left bottom;
+        }
+
+        @media (max-width: 1100px) {
+            left: -150px;
+        }
+
+        @include tablets() {
+            position: static;
+            width: 100%;
+            height: 350px;
+            order: 2;
+            background-image: url(~images/content/guitar-hor.png);
+            background-size: contain;
+            background-position: left bottom;
+        }
+
+        @include phones() {
+            height: 200px;
+            background-size: 300px;
+            background-position: 0 0;
+            transform: scale(1.5);
+            transform-origin: 0 center;
+        }
     }
 
     &__title {
         color: $title-color;
-        font-size: 30px;
-        line-height: 36px;
+        font-size: 30PX;
+        line-height: 36PX;
         font-weight: bold;
         margin-bottom: 50px;
+
+        @include tablets() {
+            max-width: 300px;
+            margin: 0 auto 20px auto;
+        }
+
+        @include phones() {
+            font-size: 24PX;
+        }
     }
 
     &__desc {
         max-width: 600px;
         margin-bottom: 50px;
+
+        @include desktop() {
+            margin-bottom: 60px;
+        }
+
+        @include tablets() {
+            max-width: 500px;
+            margin: 0 auto 20px auto;
+        }
     }
 
     &__graphic-status {
         color: $title-color;
-        padding: 30px 96px 30px 123px;
+        padding: 30px 0 30px 123px;
+
+        @include desktopL() {
+            padding-left: 90px;
+        }
+
+        @media (max-width: 1100px) {
+            padding-left: 30px;
+        }
+
+        @include phones() {
+            padding-left: 0;
+        }
     }
 }

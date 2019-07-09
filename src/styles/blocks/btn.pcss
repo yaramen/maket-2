@@ -2,16 +2,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 31px 120px;
+    padding: 31PX 120PX;
     color: $text-color;
     text-transform: uppercase;
     font: inherit;
-    font-size: 18px;
+    font-size: 18PX;
     line-height: 1;
     font-weight: bold;
     border-radius: 40px;
     background-image: $button-default;
     outline: none;
+
+    @include phones() {
+        width: 100%;
+    }
 
     &:hover, &:focus {
         background-image: $button-hover;

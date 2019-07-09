@@ -20,7 +20,8 @@
   "button-default": "linear-gradient(to right, #0066ef, #0089f2)",
   "button-hover": "linear-gradient(to right, #006dff, #0091ff)",
   "bp-desktop-hd": "1800px",
+  "bp-desktop-L": "1520px",
   "bp-desktop": "1200px",
-  "bp-tablets": "768px",
-  "bp-phones": "480px"
+  "bp-tablets": "991px",
+  "bp-phones": "767px"
 }

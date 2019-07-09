@@ -1,29 +1,59 @@
 .footer {
+    display: block;
     padding: 100px 0;
     color: $text-color;
     background-color: $footer-bg;
+
+    @include tablets() {
+        padding-top: 70px;
+    }
 
     &__wrap {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+
+        @include phones() {
+            flex-wrap: wrap;
+        }
     }
 
     &__owner {
         display: flex;
         width: 378px;
+
+        @include desktop() {
+            flex-direction: column;
+            width: auto;
+            min-width: 245px;
+        }
+
+
+        @include phones() {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 40px;
+        }
     }
 
     &__copyright {
         flex-grow: 1;
-        font-size: 48px;
+        font-size: 48PX;
         line-height: 1;
         font-weight: 600;
         opacity: 0.15;
+
+        @include desktop() {
+            margin-bottom: 20px;
+        }
     }
 
     &__site-info {
         width: 157px;
+
+       @include phones() {
+            width: 100%;
+        }
     }
 
     &__site-name {
@@ -34,8 +64,21 @@
         margin-bottom: 15px;
     }
 
+    &__site-type {
+        @include tablets() {
+            br {
+                display: none;
+            }
+        }
+    }
+
     &__other {
-        width: 1007px
+        width: 1007px;
+
+        @include tablets() {
+            width: auto;
+            flex-grow: 1;
+        }
     }
 
     &__row {
@@ -44,23 +87,55 @@
         justify-content: space-between;
         padding-top: 35px;
         padding-left: 30px;
+
+        @include phones() {
+            flex-direction: column;
+            padding-left: 0;
+        }
     }
 
     &__text {
         margin-bottom: 22px;
+        @include tablets() {
+            margin-bottom: 15px;
+        }
     }
 
     &__social-link {
         width: 348px;
+
+        @include desktopL {
+            padding-right: 0;
+            width: 39%;
+        }
+
+        @include phones() {
+            width: 100%;
+        }
     }
 
     &__quote {
         width: 474px;
         margin: 0;
         padding-right: 30px;
+
+        @include desktopL {
+            padding-right: 0;
+            width: 53%;
+        }
+
+        @include phones() {
+            width: 100%;
+            padding-right: 0;
+
+        }
     }
 
     &__quote-message {
         margin-bottom: 22px;
+
+        @include tablets() {
+            margin-bottom: 15px;
+        }
     }
 }

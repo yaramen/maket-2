@@ -9,14 +9,66 @@
         display: block;
         padding: 10px 30px;
         outline: none;
+        white-space: nowrap;
+
+        @media (max-width: 1100px) {
+            padding: 10px 20px;
+        }
 
         &:hover, &:focus {
             opacity: 0.5;
+        }
+    }
+    
+    &.-header {
+        display: block;
+
+        @include tablets() {
+            display: none;
         }
     }
 
     &.-footer {
         position: relative;
         top: -10px;
+
+        .menu__link {
+            padding: 10px 30px;
+
+            @include phones() {
+                padding: 10px 0;
+            }
+        }
+
+        .menu__list {
+            @include tablets() {
+                flex-wrap: wrap;
+                align-items: flex-start;
+            }
+        }
+        .menu__item {
+            @include tablets() {
+                width: 25%;
+            }
+
+            @include phones() {
+                width: 50%;
+            }
+        }
+    }
+    
+    &.-mobile {
+        margin-bottom: 40px;
+
+        .menu__list {
+            flex-direction: column;
+            padding: 0;
+        }
+
+        .menu__link {
+            font-size: 18PX;
+            font-weight: bold;
+            padding: 12px 20px;
+        }
     }
 }

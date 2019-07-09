@@ -2,11 +2,24 @@
     position: relative;
     margin-bottom: 145px;
 
+    @include desktopHd() {
+        margin-bottom: 160px;
+    }
+
+    @include tablets() {
+        margin-bottom: 130px;
+    }
+
+    @include phones() {
+        margin-bottom: 70px;
+    }
+
     &:after {
         content: '';
         position: absolute;
         top: 100%;
         left: 0;
+        margin-top: -1px;
 
         display: block;
         width: 100%;
@@ -14,22 +27,76 @@
 
         background-color: $section-about-bg;
         clip-path: polygon(100% 0, 100% 25%, 77% 100%, 0 25%, 0 0);
+        z-index: -1;
+
+        @include desktop() {
+            height: 160px;
+            clip-path: polygon(100% 0, 100% 45%, 80% 100%, 0 40%, 0 0);
+        }
+
+        @include tablets() {
+            height: 120PX;
+            clip-path: polygon(100% 0, 100% 60%, 80% 100%, 0 60%, 0 0);
+        }
+
+        @include phones() {
+            height: 105PX;
+            clip-path: polygon(100% 0, 100% 80%, 80% 100%, 0 80%, 0 0);
+        }
     }
 
     &__wrap {
         display: flex;
-        justify-content: space-between;
-        width: 1038px;
+        justify-content: center;
         margin: 0 auto;
         padding: 0 30px 100px 30px;
+
+        @include desktop() {
+            width: auto;
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 100px;
+            justify-content: flex-start;
+        }
+
+        @include tablets() {
+            justify-content: center;
+        }
+
+        @include phones() {
+            flex-wrap: wrap;
+            padding-bottom: 0;
+        }
+    }
+
+    &__welcome {
+        @include tablets() {
+            margin-bottom: 0;
+        }
     }
 
     &__profile {
-        width: 350px;
+        min-width: 280PX;
+        margin-right: 148px;
+
+        @include tablets() {
+            margin-right: 100px;
+            min-width: 216PX;
+        }
+
+        @include phones() {
+            margin-right: 0;
+            width: 260PX;
+            margin-bottom: 40px;
+        }
     }
 
     &__content {
-        width: 545px;
+        max-width: 545px;
+
+        @include tablets() {
+            width: 100%;
+        }
     }
 
     &__name {
@@ -37,10 +104,22 @@
         font-size: 36px;
         line-height: 48px;
         font-weight: bold;
+
+        @include tablets() {
+            margin-bottom: 40PX;
+        }
+
+        @include tablets() {
+            font-size: 30PX;
+        }
     }
 
     &__text {
-        margin-bottom: 90px;
+        margin-bottom: 90PX;
+
+        @include tablets() {
+            margin-bottom: 40px;
+        }
     }
 
     &__text-quotation {

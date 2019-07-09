@@ -7,3 +7,4 @@ import "./pug/components/skills/skills";
 import "./pug/components/reviews/reviews";
 import "./scripts/scene-parallax";
 import "./scripts/drum-parallax";
+import "./scripts/menu";

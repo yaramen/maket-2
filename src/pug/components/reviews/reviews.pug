@@ -1,9 +1,9 @@
 script(type="text/x-template" id="reviews")
     .slider-review
         .slider-review__leaf
-            button.slider-review__leaf-btn.-prev(@click="prev()")
+            button.slider-review__leaf-btn.-prev(@click="prev()" ref="prev" disabled="disabled")
                 +icon('arrow-down', 'slider-review__leaf-icon')
-            button.slider-review__leaf-btn.-next(@click="next()")
+            button.slider-review__leaf-btn.-next(@click="next()" ref="next")
                 +icon('arrow-down', 'slider-review__leaf-icon')
         .slider-review__list
             flickity(ref="flickity" :options="flickityOptions")

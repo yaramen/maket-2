@@ -9,12 +9,34 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+
+        @include desktop() {
+            left: 43%;
+            transform: none;
+        }
+
+        @include tablets() {
+            font-size: 48px;
+            line-height: 1;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
 
     &__title {
         font-size: 72px;
         line-height: 60px;
         font-weight: 800;
+
+        @include tablets() {
+            font-size: 48PX;
+            line-height: 1;
+        }
+
+        @include phones() {
+            font-size: 36PX;
+            line-height: 1;
+        }
     }
 
     &__sub-title {
@@ -28,6 +50,16 @@
         line-height: 30px;
         text-align: right;
         opacity: 0.4;
+
+        @include tablets() {
+            left: 0;
+            right: auto;
+            top: auto;
+            width: 100%;
+            margin-right: 0;
+            bottom: calc(100% + 30px);
+            text-align: center;
+        }
     }
 
     &__scroll {
@@ -36,6 +68,10 @@
         bottom: 115px;
 
         transform: translateX(-50%);
+
+        @include tablets() {
+            display: none;
+        }
     }
 
     &__scroll-btn {
@@ -53,6 +89,9 @@
 
     &__scroll-text {
         margin-right: 10px;
+        @include desktopHd() {
+            font-size: 18px;
+        }
     }
 
     &__scroll-icon {

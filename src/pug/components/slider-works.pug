@@ -8,61 +8,37 @@ include ../../mixins
             desc: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!',
             link: '#',
             tags: ['HTML', 'CSS', 'javascript']
-        },
-        {
-            picture: 'content/works/2.jpg',
-            thumb: 'content/works/2.jpg',
-            title: 'Сайт школы образования',
-            desc: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!',
-            link: '#',
-            tags: ['HTML', 'CSS', 'javascript']
-        },
-        {
-            picture: 'content/works/3.jpg',
-            thumb: 'content/works/3.jpg',
-            title: 'Сайт школы образования',
-            desc: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!',
-            link: '#',
-            tags: ['HTML', 'CSS', 'javascript']
-        },
-        {
-            picture: 'content/works/4.jpg',
-            thumb: 'content/works/3.jpg',
-            title: 'Сайт школы образования',
-            desc: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!',
-            link: '#',
-            tags: ['HTML', 'CSS', 'javascript']
-        },
-        {
-            picture: 'content/works/5.jpg',
-            thumb: 'content/works/3.jpg',
-            title: 'Сайт школы образования',
-            desc: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!',
-            link: '#',
-            tags: ['HTML', 'CSS', 'javascript']
         }
     ];
 
+    var sliderThumbs = [
+        'content/works/1.jpg',
+        'content/works/2.jpg',
+        'content/works/3.jpg',
+        'content/works/4.jpg',
+        'content/works/5.jpg',
+    ]
+
 .slider-works
-    .slider-works__controls
-        .slider-works__toggle-list-wrap
-            ul.slider-works__toggle-list
-                each item, i in sliderWorks
-                    li(class=`slider-works__toggle-item ${i === 0 ? '-active' : ''}`)
-                        button.slider-works__toggle-btn
-                            +image(item.picture, 'slider-works__thumbs')
-        .slider-works__leaf
-            button.slider-works__leaf-btn.-next
-                +icon('arrow-down', 'slider-works__icon-point')
-                span.visually-hidden Следующий
-            button.slider-works__leaf-btn.-prev
-                +icon('arrow-down', 'slider-works__icon-point')
-                span.visually-hidden Предыдущий
     ul.slider-works__list
         each item, i in sliderWorks
             li(class=`slider-works__item ${i === 0 ? '-active' : ''}` data-slider-number=`${i + 1}`)
                 .slider-works__view
                     +image(item.picture, 'slider-works__picture')
+                    .slider-works__controls
+                        .slider-works__toggle-list-wrap
+                            ul.slider-works__toggle-list
+                                each item, i in sliderThumbs
+                                    li(class=`slider-works__toggle-item ${i === 0 ? '-active' : ''}`)
+                                        button.slider-works__toggle-btn
+                                            +image(item, 'slider-works__thumbs')
+                        .slider-works__leaf
+                            button.slider-works__leaf-btn.-next
+                                +icon('arrow-down', 'slider-works__icon-point')
+                                span.visually-hidden Следующий
+                            button.slider-works__leaf-btn.-prev
+                                +icon('arrow-down', 'slider-works__icon-point')
+                                span.visually-hidden Предыдущий
                 .slider-works__content
                     .slider-works__tags
                         each tag in item.tags

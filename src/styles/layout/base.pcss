@@ -30,12 +30,25 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 1480px;
-  width: 95%;
-  // width: 1490px;
+  max-width: 1480PX;
 
-  @include phones {
-    width: 85%;
+  @include desktopHd {
+    padding: 0 8.88%;
+    max-width: none;
+  }
+
+  @include desktopL {
+    padding: 0 5%;
+  }
+
+  @include desktop {
+    //max-width: 688PX;
+  }
+
+  @include tablets {
+    padding-left: 30PX;
+    padding-right: 30PX;
+    max-width: none;
   }
 }
 
@@ -96,6 +109,10 @@ img {
   font-size: 16px;
   font-weight: 600;
   line-height: 30px;
+
+  @include phones() {
+    line-height: 24PX;
+  }
 
   &.-black {
     color: rgba(#000, 0.5);

@@ -1,9 +1,14 @@
 .table {
     display: flex;
+    justify-content: space-between;
     font-size: 16px;
 
-    &__thead {
-        margin-right: 75px;
+    @include tablets() {
+        justify-content: space-between;
+    }
+
+    @include phones() {
+        width: 100%;
     }
 
     &__header, &__values{

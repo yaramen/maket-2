@@ -9,9 +9,30 @@
         margin-bottom: 40px;
         margin-right: 50px;
 
+        @include desktop() {
+            margin-right: 30px;
+        }
+
+        @include phones() {
+            margin-right: 0;
+        }
+
+        &:nth-child(2) {
+            @include desktop() {
+                margin-right: 0;
+            }
+        }
+
         &.-full {
             width: 100%;
             margin-bottom: 60px;
+            @include desktop() {
+                margin-right: 0;
+            }
+
+            @include tablets() {
+                margin-bottom: 30px;
+            }
         }
     }
 
@@ -66,5 +87,11 @@
         color: rgba($text-color, 0.5);
         font-weight: 600;
         font-size: 16px;
+    }
+
+    &__btn {
+        @include tablets() {
+            margin: 0 auto;
+        }
     }
 }

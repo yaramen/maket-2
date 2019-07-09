@@ -7,6 +7,10 @@
     &__item {
         &:not(:last-child) {
             margin-right: 40px;
+
+            @include desktopHd() {
+                margin-right: 45px;
+            }
         }
     }
 
@@ -29,6 +33,10 @@
     }
 
     &.-footer {
+        @include tablets() {
+            margin-bottom: 55px;
+        }
+
         .social__item {
             &:not(:last-child) {
                 margin-right: 20px;
@@ -44,6 +52,11 @@
             border: 1px solid rgba($text-color, 0.5);
             border-radius: 50%;
 
+            @include tablets() {
+                width: 60px;
+                height: 60px;
+            }
+
             &:hover, &:focus {
                 border-color: $focus-color;
             }
@@ -52,6 +65,31 @@
         .social__icon {
             width: 25px;
             height: 25px;
+        }
+    }
+
+    &.-header {
+        @include tablets() {
+            margin-left: auto;
+        }
+
+        @include phones() {
+            display: none;
+        }
+
+        .social__link {
+            @include desktop() {
+                height: 30px;
+            }
+        }
+    }
+
+    &.-mobile {
+        padding-left: 20px;
+        height: 30px;
+
+        .social__icon {
+            fill: #414c63;
         }
     }
 }

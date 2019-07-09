@@ -1,21 +1,53 @@
 .skill-list {
     color: #000;
+    @include desktop() {
+        margin-bottom: 15px;
+    }
+    @include tablets() {
+        margin-bottom: 30px;
+    }
 
     &__title {
         font-size: 24px;
         font-weight: bold;
+
+        @include phones() {
+            text-align: center;
+        }
     }
 
     &__collection {
         @include list-reset();
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         padding: 35px 0;
+
+        @include desktopL() {
+            justify-content: space-between;
+        }
+
+        @include tablets() {
+            padding: 20px 0;
+        }
+
+        @include phones() {
+            flex-wrap: wrap;
+        }
     }
 
     &__item {
         position: relative;
         width: 150px;
+        margin-right: 50px;
+
+        @include desktopL() {
+            margin-right: 0;
+        }
+
+        @include phones() {
+            width: 145px;
+            margin-bottom: 5px;
+        }
     }
 
     &__text {

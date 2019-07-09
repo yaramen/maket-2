@@ -1,12 +1,28 @@
 .section-feedback {
     padding-bottom: 145px;
 
+    @include tablets() {
+        padding-bottom: 110PX;
+    }
+
     &__title {
         color: $text-color;
         margin-bottom: 80px;
+
+        @include tablets() {
+            text-align: center;
+        }
+
+        @include phones() {
+            margin-bottom: 50px;
+        }
     }
 
     &__content {
         width: 915px;
+
+        @include tablets() {
+            width: 100%;
+        }
     }
 }

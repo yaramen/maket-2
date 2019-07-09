@@ -1,12 +1,29 @@
 .section-review {
     padding: 135px 0 190px 0;
 
+    @include desktop() {
+        padding-bottom: 135px;
+    }
+
     &__title {
         color: $text-color;
         margin-bottom: 93px;
+
+        @include tablets() {
+            margin-bottom: 60PX;
+        }
+
+        @include phones() {
+            font-size: 24PX;
+            margin-bottom: 80PX
+        }
     }
 
     &__content {
         width: 1007px;
+
+        @include tablets() {
+            width: 100%;
+        }
     }
 }
