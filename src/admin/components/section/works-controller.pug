@@ -1,0 +1,43 @@
+.works-controller
+    form.works-form
+        .works-form__media
+            .works-form__file-area
+                .works-form__file-text Перетащите или загрузитедля загрузки изображения
+                button.btn.-load Загрузить
+        .works-form__content
+            .field-group
+                label.field-group__label(for="name") Название
+                input.field-group__field(type="text" id="name" placeholder="Введите название")
+            .field-group
+                label.field-group__label(for="link") Ссылка
+                input.field-group__field(type="text" id="link" placeholder="Введите ссылку")
+            .field-group
+                label.field-group__label(for="desc") Описание
+                textarea.field-group__field(id="desc")
+            .field-group
+                label.field-group__label(for="tags") Добавленные тэги
+                input.field-group__field(type="text" id="tags")
+                ul.tags
+                    li.tags__item html
+                    li.tags__item css
+                    li.tags__item javascript
+            .work-form__actions
+                button.btn.-cancel Отмена
+                button.btn.-save Сохранить
+    .card-list
+        .card-list__add
+            button.btn.-add-item Добавить работу
+        .card
+            .card__header
+                img.card__image
+                .card__tags
+                    .card__tags-item HTML
+                    .card__tags-item CSS
+                    .card__tags-item Javascript
+            .card__content
+                .card__title Сайт школы образования
+                .card__desc Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                a.card__link(href="http://loftschool.ru") http://loftschool.ru
+            .card__control
+                button.btn.-edit Править
+                button.btn.-remove Удалить

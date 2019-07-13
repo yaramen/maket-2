@@ -1,0 +1,33 @@
+.review-controller
+    form.review-form
+        .review-form__media
+            .review-form__avatar
+                div Добавить фото
+        .review-form__content
+            .review-form__entry
+                .field-group
+                    label.field-group__label(for="auth-name") Имя автора
+                    input.field-group__field(type="text" id="auth-name" placeholder="Введите имя")
+                .field-group
+                    label.field-group__label(for="auth-role") Титул автора
+                    input.field-group__field(type="text" id="auth-role" placeholder="Введите ")
+            .field-group
+                label.field-group__label(for="auth-desc") Описание
+                textarea.field-group__field(id="auth-desc")
+            .work-form_ _actions
+                button.btn.-cancel Отмена
+                button.btn.-save Сохранить
+    .card-list
+        .card-list__add
+            button.btn.-add-item Добавить отзыв
+        .card.-review
+            .card__header
+                img.card__image
+                .card__auth
+                    .card__auth-name
+                    .card__auth-role
+            .card__content
+                .card__desc Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+            .card__control
+                button.btn.-edit Править
+                button.btn.-remove Удалить
