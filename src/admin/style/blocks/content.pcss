@@ -1,0 +1,47 @@
+.content {
+    @include container();
+    color: #414c63;
+
+    &__header {
+        display: flex;
+        align-items: center;
+    }
+
+    &__title {
+        padding: 50px 0;
+        font-size: 21px;
+        font-weight: bold;
+        margin-right: 60px;
+    }
+
+    &__add-group {
+
+    }
+
+    &__add {
+        display: flex;
+        align-items: center;
+        font: inherit;
+        font-size: 16px;
+        color: #383bcf;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__add-plus {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        margin-right: 14px;
+        color: #fff;
+        background-image: linear-gradient(to right, #006aed, #3f35cb);
+        border-radius: 50%;
+    }
+}

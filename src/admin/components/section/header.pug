@@ -1,14 +1,15 @@
 header.header
     .user-block
-        img.user-block__image
-        .user-block__name Владимир Астаханов
-        h1.user-block__title Панель администрирования
-        button.user-block__logout Выйти
+        .user-block__container
+            img.user-block__image(src="~/images/content/user.jpg")
+            .user-block__name Владимир Астаханов
+            .user-block__title Панель администрирования
+            a.user-block__logout(href="#logout") Выйти
     nav.menu
         ul.menu__list
             li.menu__item.-active
-                a.menu__link Обо мне
+                a.menu__link(href="#") Обо мне
             li.menu__item
-                a.menu__link Работы
+                a.menu__link(href="#") Работы
             li.menu__item
-                a.menu__link Отзывы
+                a.menu__link(href="#") Отзывы

@@ -1,0 +1,45 @@
+.review-form {
+    flex-grow: 1;
+    padding: 10px 20px 30px 20px;
+    background-color: #fff;
+    box-shadow: 4px 3px 20px 0 rgba(0, 0, 0, 0.07);
+    margin-bottom: 20px;
+
+    &__header {
+        padding: 15px 5px;
+        margin-bottom: 45px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    &__body {
+        display: flex;
+    }
+
+    &__media {
+        width: 200px;
+        margin-right: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__content {
+        min-width: 615px;
+    }
+
+    &__group {
+        display: flex;
+
+        .field-group {
+            width: 50%;
+
+            &:nth-child(1) {
+                margin-right: 20px;
+            }
+        }
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: flex-end;
+    }
+}

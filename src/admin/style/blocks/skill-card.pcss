@@ -1,0 +1,45 @@
+.skill-card {
+    flex-grow: 1;
+    padding: 10px 20px 30px 20px;
+    background-color: #fff;
+    box-shadow: 4px 3px 20px 0 rgba(0, 0, 0, 0.07);
+
+    &:nth-child(odd) {
+        margin-right: 10px;
+    }
+
+    &:nth-child(even) {
+        margin-left: 10px;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        padding: 15px 10px;
+        border-bottom: 1px solid rgba(#1f232d, 0.15);
+    }
+
+    &__control {
+        margin-left: auto;
+    }
+
+    &__body {
+        min-height: 220px;
+    }
+
+    &__add {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &__add-name {
+        width: 217px;
+        margin-right: 10px;
+    }
+
+    &__add-percent {
+        width: 75px;
+        margin-right: 30px;
+    }
+}
