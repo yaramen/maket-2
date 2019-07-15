@@ -3,7 +3,8 @@
         .review-form__header
             .review-form__title Новый отзыв
         .review-form__body
-            .review-form__media
+            label.review-form__media(for="avatar-file")
+                input.review-form__file(type="file" id="avatar-file")
                 img.review-form__avatar(src="~images/content/avatar-default.png")
                 .review-form__avatar-label Добавить фото
             .review-form__content
@@ -15,7 +16,7 @@
                         label.field-group__label(for="auth-role") Титул автора
                         input.field-group__field(type="text" id="auth-role" placeholder="Введите ")
                 .field-group
-                    label.field-group__label(for="auth-desc") Описание
+                    label.field-group__label(for="auth-desc") Отзыв
                     textarea.field-group__field(id="auth-desc")
                 .review-form__actions
                     button.btn.-cancel Отмена

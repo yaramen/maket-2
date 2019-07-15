@@ -1,9 +1,10 @@
 .data-table {
     width: 100%;
+    padding: 10px 0 0 10px;
 
     &__row {
         display: flex;
-        padding: 12px 5px;
+        padding: 10px 5px;
     }
 
     &__name {
@@ -11,16 +12,25 @@
     }
 
     &__percent {
+        position: relative;
         width: 100px;
+        &:after {
+            content: '%';
+            display: block;
+            position: absolute;
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
     }
 
     &__edit {
-        width: 40px;
+        width: 30px;
         text-align: right;
     }
 
     &__remove {
-        width: 40px;
+        width: 30px;
         text-align: right;
     }
 

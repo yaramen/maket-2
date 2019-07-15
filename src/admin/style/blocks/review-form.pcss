@@ -1,18 +1,29 @@
 .review-form {
     flex-grow: 1;
-    padding: 10px 20px 30px 20px;
+    padding: 10px 30px 30px 30px;
     background-color: #fff;
     box-shadow: 4px 3px 20px 0 rgba(0, 0, 0, 0.07);
     margin-bottom: 20px;
 
     &__header {
-        padding: 15px 5px;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 15px 5px 25px 0;
         margin-bottom: 45px;
         border-bottom: 1px solid #ccc;
     }
 
     &__body {
         display: flex;
+
+        @include phones() {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    
+    &__file {
+        display: none;
     }
 
     &__media {
@@ -20,14 +31,34 @@
         margin-right: 30px;
         display: flex;
         flex-direction: column;
+        cursor: pointer;
+        @include phones() {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__avatar {
+        margin-bottom: 25px;
+    }
+    
+    &__avatar-label {
+        text-align: center;
+        color: #383bcf;
+        font-weight: 600;
     }
 
     &__content {
         min-width: 615px;
+
+        @include tablets() {
+            width: 100%;
+            min-width: 0;
+        }
     }
 
     &__group {
         display: flex;
+        margin-bottom: 10px;
 
         .field-group {
             width: 50%;
@@ -41,5 +72,9 @@
     &__actions {
         display: flex;
         justify-content: flex-end;
+
+        @include phones() {
+            flex-direction: column-reverse;
+        }
     }
 }

@@ -1,23 +1,43 @@
 .works-form {
     flex-grow: 1;
-    padding: 10px 20px 30px 20px;
+    padding: 10px 30px 30px 30px;
     background-color: #fff;
     box-shadow: 4px 3px 20px 0 rgba(0, 0, 0, 0.07);
     margin-bottom: 20px;
 
     &__header {
-        padding: 15px 5px;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 15px 5px 25px 0;
         margin-bottom: 45px;
         border-bottom: 1px solid #ccc;
     }
 
+    &__file-text {
+        line-height: 34px;
+    }
+
     &__body {
         display: flex;
+
+        @include phones() {
+            flex-direction: column;
+        }
     }
 
     &__media {
         width: 50%;
         padding-right: 15px;
+
+        @include phones() {
+            width: 100%;
+            margin-bottom: 30px;
+            padding-right: 0;
+        }
+    }
+    
+    &__file {
+        display: none;
     }
 
     &__file-area {
@@ -28,17 +48,27 @@
         height: 275px;
         border: 1px dashed #a1a1a1;
         background-color: #dee4ed;
+        cursor: pointer;
     }
 
     &__content {
         width: 50%;
         padding-left: 15px;
 
+        @include phones() {
+            width: 100%;
+            margin-bottom: 30px;
+            padding-left: 0;
+        }
     }
 
     &__actions {
         display: flex;
         align-items: center;
         justify-content: flex-end;
+
+        @include phones() {
+            flex-direction: column-reverse;
+        }
     }
 }

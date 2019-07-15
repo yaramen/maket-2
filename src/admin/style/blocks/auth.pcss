@@ -14,6 +14,10 @@
         height: 100%;
         background-color: rgba(#2d3c4e, 0.8);
         z-index: 5;
+
+        @include phones() {
+            display: none;
+        }
     }
 
     &__form {
@@ -21,10 +25,22 @@
         left: 50%;
         top: 50%;
         z-index: 10;
-        padding: 60px 80px;
+        padding: 50px 77px 50px 77px;
         color: #414c63;
         background-color: #fff;
         transform: translate(-50%, -50%);
+
+        @include phones() {
+            position: static;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+            padding: 0 20px;
+            transform: none;
+        }
     }
 
     &__close {
@@ -39,7 +55,7 @@
 
     &__title {
         margin-top: 0;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         font-size: 36px;
         font-weight: 600;
         text-align: center;
@@ -47,6 +63,10 @@
 
     &__body {
         width: 410px;
+
+        @include phones() {
+            width: 100%;
+        }
     }
 
 
@@ -64,14 +84,24 @@
 
     &__field {
         width: 100%;
-        padding: 25px 10px 25px 45px;
-        margin-bottom: 45px;
+        padding: 25px 10px 15px 45px;
+        margin-bottom: 40px;
         color: #414c63;
         font-size: 18px;
         border: none;
         border-bottom: 1px solid #414c63;
         background-color: transparent;
         outline: none;
+        
+        &:focus {
+            &.-login {
+                background-image: url(~images/content/icons/login-active.png);
+            }
+
+            &.-password {
+                background-image: url(~images/content/icons/password-active.png);
+            }
+        }
 
         &.-login {
             background: url(~images/content/icons/login.png) no-repeat left center;

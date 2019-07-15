@@ -1,15 +1,33 @@
 .skill-card {
     flex-grow: 1;
-    padding: 10px 20px 30px 20px;
+    padding: 10px 20px 35px 20px;
     background-color: #fff;
     box-shadow: 4px 3px 20px 0 rgba(0, 0, 0, 0.07);
+    min-height: 390px;
+    display: flex;
+    flex-direction: column;
+    max-width: calc(50% - 10px);
+    margin-bottom: 20px;
+
+    @include phones() {
+        width: 100%;
+        max-width: none;
+    }
 
     &:nth-child(odd) {
         margin-right: 10px;
+
+        @include phones() {
+            margin-right: 0;
+        }
     }
 
     &:nth-child(even) {
         margin-left: 10px;
+
+        @include phones() {
+            margin-left: 0;
+        }
     }
 
     &__header {
@@ -31,6 +49,8 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        margin-top: auto;
+        margin-right: 10px;
     }
 
     &__add-name {
@@ -39,7 +59,17 @@
     }
 
     &__add-percent {
+        position: relative;
         width: 75px;
         margin-right: 30px;
+
+        &:after {
+            content: '%';
+            display: block;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
     }
 }

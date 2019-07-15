@@ -1,12 +1,13 @@
 .works-controller
     form.works-form
         .works-form__header
-            .works-form__title Редактирование работ
+            .works-form__title Редактирование работы
         .works-form__body
             .works-form__media
-                .works-form__file-area
+                label.works-form__file-area(for="work-file")
+                    input.works-form__file(type="file" id="work-file")
                     .works-form__file-text Перетащите или загрузите<br>для загрузки изображения<br>
-                        button.btn.-load Загрузить
+                        .btn.-load Загрузить
             .works-form__content
                 .field-group
                     label.field-group__label(for="name") Название
@@ -26,7 +27,7 @@
                     button.btn.-save Сохранить
     .card-list
         .card-list__col
-            .card-list__add
+            button.card-list__add
                 .card-list__icon +
                 .card-list__text Добавить<br> работу
         .card-list__col

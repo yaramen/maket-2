@@ -5,17 +5,24 @@
     &__header {
         display: flex;
         align-items: center;
+
+        @include phones() {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px 0;
+        }
     }
 
     &__title {
-        padding: 50px 0;
+        padding: 50px 0 55px 0;
         font-size: 21px;
         font-weight: bold;
         margin-right: 60px;
-    }
 
-    &__add-group {
-
+        @include phones() {
+            padding: 10px 0;
+            margin-right: 10px;
+        }
     }
 
     &__add {

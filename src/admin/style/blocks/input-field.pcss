@@ -13,6 +13,14 @@
     &.-title {
         width: 275px;
         font-weight: bold;
+
+        @include tablets() {
+            width: 170px;
+        }
+    }
+
+    &.-percent {
+        padding-right: 25px;
     }
     
     &::placeholder {
