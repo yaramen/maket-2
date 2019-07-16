@@ -1,0 +1,21 @@
+script(type="text/x-template" id="form-feedback")
+    form.form(@submit.prevent="submit")
+        .form__group(:class="{invalid: validation.name}")
+            label.form__label.-name(for="name") Введите ваше имя
+            .form__field-icon
+                input.form__field(type="text" id="name" placeholder="Вася" @input="onChangeData")
+                +icon("user", "form__icon")
+            .form__error {{this.errors[validation.name]}}
+        .form__group(:class="{invalid: validation.email}")
+            label.form__label.-email(for="email") Введите ваше email
+            .form__field-icon
+                input.form__field(type="text" id="email" placeholder="example@email.com" @input="onChangeData")
+                +icon("envelope", "form__icon")
+            .form__error {{this.errors[validation.email]}}
+        .form__group.-full(:class="{invalid: validation.message}")
+            label.form__label.-message(for="message") Сообщение к письму
+            .form__field-icon
+                textarea.form__field.-area(id="message" placeholder="Текст..." @input="onChangeData")
+                +icon("message", "form__icon")
+            .form__error {{this.errors[validation.message]}}
+        button.form__btn.btn.-send(type="submit") Отправить
