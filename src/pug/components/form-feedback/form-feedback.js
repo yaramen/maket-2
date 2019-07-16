@@ -33,7 +33,17 @@ new Vue({
     submit() {
       this.validateData();
       if(this.isValidAll()) {
-        console.log('valid all');
+        const {name, email, message} = this;
+        fetch('/send-data', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name, email, message
+          })
+        });
       }
     },
     onChangeData(e) {
