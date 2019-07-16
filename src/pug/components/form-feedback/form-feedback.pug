@@ -1,5 +1,5 @@
 script(type="text/x-template" id="form-feedback")
-    form.form(@submit.prevent="submit")
+    form.form(@submit.prevent="submit" :class="{send: isSend}")
         .form__group(:class="{invalid: validation.name}")
             label.form__label.-name(for="name") Введите ваше имя
             .form__field-icon
@@ -19,3 +19,8 @@ script(type="text/x-template" id="form-feedback")
                 +icon("message", "form__icon")
             .form__error {{this.errors[validation.message]}}
         button.form__btn.btn.-send(type="submit") Отправить
+        .form__popup
+            .form__popup-container
+                .form__popup-message Письмо отправлено
+                button.form__popup-btn(type="button" @click="closePopup") Закрыть
+

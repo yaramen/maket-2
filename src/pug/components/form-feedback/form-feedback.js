@@ -26,7 +26,8 @@ new Vue({
       email: '',
       message: '',
       validation: {},
-      errors: []
+      errors: [],
+      isSend: false
     };
   },
   methods: {
@@ -34,7 +35,7 @@ new Vue({
       this.validateData();
       if(this.isValidAll()) {
         const {name, email, message} = this;
-        fetch('/send-data', {
+        fetch('/send', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
@@ -43,7 +44,11 @@ new Vue({
           body: JSON.stringify({
             name, email, message
           })
-        });
+        }).then(data => {
+          this.isSend = true;
+        }).catch(data => {
+          this.isSend = true;
+        })
       }
     },
     onChangeData(e) {
@@ -80,6 +85,9 @@ new Vue({
     },
     isValidAll() {
       return Object.values(this.validation).every(el => el === VALID);
+    },
+    closePopup() {
+      this.isSend = false;
     }
   },
   created() {
