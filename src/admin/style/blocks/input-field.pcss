@@ -10,12 +10,17 @@
     background-color: transparent;
     outline: none;
 
+    @include phones() {
+        font-size: 14px;
+    }
+
     &.-title {
         width: 275px;
         font-weight: bold;
 
         @include tablets() {
             width: 170px;
+            flex-grow: 1;
         }
     }
 
@@ -25,5 +30,9 @@
     
     &::placeholder {
         color: rgba(#414c63, 0.51);
+
+        @include phones() {
+            font-size: 14px;
+        }
     }
 }

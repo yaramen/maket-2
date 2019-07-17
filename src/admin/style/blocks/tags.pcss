@@ -1,0 +1,51 @@
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    margin: 0;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        margin-right: 10px;
+        background-color: #f4f4f4;
+        border-radius: 15px;
+        @include phones() {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__name {
+        color: #283340;
+        font-size: 13px;
+        margin-right: 10px;
+    }
+
+    &__close {
+        position: relative;
+        display: block;
+        width: 10px;
+        height: 10px;
+        background-color: transparent;
+        border: none;
+
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #283340;
+        }
+
+        &:before {
+            transform: rotate(45deg);
+        }
+
+        &:after {
+            transform: rotate(-45deg);
+        }
+    }
+}

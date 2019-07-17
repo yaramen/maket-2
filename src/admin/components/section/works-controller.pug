@@ -22,6 +22,15 @@
                     label.field-group__label(for="tags") Добавленные тэги
                     input.field-group__field(type="text" id="tags")
                     ul.tags
+                        li.tags__item
+                            .tags__name HTML
+                            button.tags__close
+                        li.tags__item
+                            .tags__name CSS
+                            button.tags__close
+                        li.tags__item
+                            .tags__name Javascript
+                            button.tags__close
                 .works-form__actions
                     button.btn.-cancel Отмена
                     button.btn.-save Сохранить
@@ -33,7 +42,7 @@
         .card-list__col
             .card.-works
                 .card__header
-                    img.card__image(src="src/images/content/works/1.jpg" width="100%")
+                    img.card__image(src="~images/content/works/1.jpg" width="100%")
                     .card__tags
                         .card__tags-item HTML
                         .card__tags-item CSS
