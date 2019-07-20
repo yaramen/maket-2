@@ -8,8 +8,8 @@ header.header
     nav.menu
         ul.menu__list
             li.menu__item.-active
-                a.menu__link(href="#") Обо мне
+                router-link(class="menu__link" to="/") Обо мне
             li.menu__item
-                a.menu__link(href="#") Работы
+                router-link(class="menu__link" to="/works") Работы
             li.menu__item
-                a.menu__link(href="#") Отзывы
+                router-link(class="menu__link" to="/reviews") Отзывы

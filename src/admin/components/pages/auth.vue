@@ -1,0 +1,24 @@
+<template lang="pug">
+    section.auth
+        form.auth__form
+            button.auth__close
+            h2.auth__title Авторизация
+            .auth__body
+                .auth__field-group
+                    label.auth__label(for="login") Логин
+                    .auth__entry
+                        .auth__field-icon
+                        input.auth__field.-login(type="text" id="login" placeholder="Введите логин")
+                .auth__field-group
+                    label.auth__label(for="password") Пароль
+                    .auth__entry
+                        .auth__field-icon
+                        input.auth__field.-password(type="password" id="password" placeholder="Введите пароль")
+                button.auth__send Отправить
+</template>
+
+<script>
+  export default {
+    name: "auth"
+  }
+</script>

@@ -1,0 +1,48 @@
+<template lang="pug">
+    .review-controller
+        form.review-form
+            .review-form__header
+                .review-form__title Новый отзыв
+            .review-form__body
+                label.review-form__media(for="avatar-file")
+                    input.review-form__file(type="file" id="avatar-file")
+                    img.review-form__avatar(src="~images/content/avatar-default.png")
+                    .review-form__avatar-label Добавить фото
+                .review-form__content
+                    .review-form__group
+                        .field-group
+                            label.field-group__label(for="auth-name") Имя автора
+                            input.field-group__field(type="text" id="auth-name" placeholder="Введите имя")
+                        .field-group
+                            label.field-group__label(for="auth-role") Титул автора
+                            input.field-group__field(type="text" id="auth-role" placeholder="Введите ")
+                    .field-group
+                        label.field-group__label(for="auth-desc") Отзыв
+                        textarea.field-group__field(id="auth-desc")
+                    .review-form__actions
+                        button.btn.-cancel Отмена
+                        button.btn.-save Сохранить
+        .card-list
+            .card-list__col
+                .card-list__add
+                    .card-list__icon +
+                    .card-list__text Добавить<br> отзыв
+            .card-list__col
+                .card.-review
+                    .card__header
+                        img.card__image(src="~images/content/avatar-1.png")
+                        .card__auth
+                            .card__auth-name Ковальчук Дмитрий
+                            .card__auth-role Основатель Loftschool
+                    .card__content
+                        .card__desc Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                    .card__control
+                        button.btn.-card-edit Править
+                        button.btn.-card-remove Удалить
+</template>
+
+<script>
+  export default {
+    name: "review"
+  }
+</script>
