@@ -24,6 +24,16 @@
         }
     }
 
+    &__input {
+        width: 100%;
+    }
+
+    &__btn {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
     &__edit {
         width: 30px;
         text-align: right;
@@ -37,5 +47,13 @@
     &__icon {
         width: 14px;
         height: 14px;
+
+        &.-edit {
+            background: transparent url(~images/content/icons/edit.png) no-repeat center center;
+        }
+
+        &.-remove {
+            background: transparent url(~images/content/icons/remove-item.png) no-repeat center center;
+        }
     }
 }

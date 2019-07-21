@@ -1,7 +1,11 @@
 .skills-controller {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 50px;
+    position: relative;
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+    }
 
     @include phones() {
         margin-left: -20px;

@@ -20,11 +20,11 @@ export default [
       title: 'Блок "Отзывы"'
     }
   },
-  {
-    path: '/auth',
-    component: () => import("../components/pages/auth"),
-    meta: {
-      title: 'Авторизация'
-    }
-  }
+  // {
+  //   path: '/auth',
+  //   component: () => import("../components/pages/auth"),
+  //   meta: {
+  //     title: 'Авторизация'
+  //   }
+  // }
 ]

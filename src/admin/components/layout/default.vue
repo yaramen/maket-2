@@ -1,28 +1,25 @@
 <template lang="pug">
     div
-        include ../section/header.pug
+        headerLayout
         main
             section.content
                 .content__header
                     .content__title {{title}}
-                    .content__add-group
-                        button.content__add
-                            span.content__add-plus +
-                            span.content__add-text Добавить группу
                 .content__body
                     router-view
 </template>
 
 <script>
+    import headerLayout from '../header'
+
   export default {
-    data() {
-      return {
-        title: this.$route.meta.title
+    components: {
+      headerLayout
+    },
+    computed: {
+      title() {
+        return this.$route.meta.title
       }
     }
   }
 </script>
-
-<style scoped>
-
-</style>

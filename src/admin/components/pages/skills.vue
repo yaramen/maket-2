@@ -1,70 +1,48 @@
 <template lang="pug">
     .skills-controller
-        form.skill-card
-            .skill-card__header
-                input.input-field.-title(type="text" placeholder="Название новой гуппы")
-                .skill-card__control
-                    button.btn.-success
-                        img.btn__icon(src="~images/content/icons/success.png")
-                    button.btn.-remove
-                        img.btn__icon(src=`~images/content/icons/remove.png`)
-            .skill-card__body
-            .skill-card__add
-                .skill-card__add-name
-                    input.input-field(type="text")
-                .skill-card__add-percent
-                    input.input-field(type="text")
-                .skill-card__add-btn
-                    button.btn.-add +
-        .skill-card
-            .skill-card__header
-                input.input-field.-title(type="text" placeholder="Название новой гуппы" value="Workflow")
-                .skill-card__control
-                    button.btn.-success
-                        img.btn__icon(src="~images/content/icons/success.png")
-                    button.btn.-remove
-                        img.btn__icon(src=`~images/content/icons/remove.png`)
-            .skill-card__body
-                table.data-table
-                    tr.data-table__row
-                        td.data-table__name Git
-                        td.data-table__percent 20
-                        td.data-table__edit
-                            img.data-table__icon(src="~images/content/icons/edit.png")
-                        td.data-table__remove
-                            img.data-table__icon(src="~images/content/icons/remove-item.png")
-                    tr.data-table__row
-                        td.data-table__name Terminal
-                        td.data-table__percent 65
-                        td.data-table__edit
-                            img.data-table__icon(src="~images/content/icons/edit.png")
-                        td.data-table__remove
-                            img.data-table__icon(src="~images/content/icons/remove-item.png")
-                    tr.data-table__row
-                        td.data-table__name Gulp
-                        td.data-table__percent 79
-                        td.data-table__edit
-                            img.data-table__icon(src="~images/content/icons/edit.png")
-                        td.data-table__remove
-                            img.data-table__icon(src="~images/content/icons/remove-item.png")
-                    tr.data-table__row
-                        td.data-table__name Webpack
-                        td.data-table__percent 80
-                        td.data-table__edit
-                            img.data-table__icon(src="~images/content/icons/edit.png")
-                        td.data-table__remove
-                            img.data-table__icon(src="~images/content/icons/remove-item.png")
-            .skill-card__add
-                .skill-card__add-name
-                    input.input-field(type="text" placeholder="Новый навык")
-                .skill-card__add-percent
-                    input.input-field.-percent(type="text")
-                .skill-card__add-btn
-                    button.btn.-add +
+        .content__add-group
+            button.content__add(@click="addNewGroup")
+                span.content__add-plus +
+                span.content__add-text Добавить группу
+        .skills-controller__container
+            skillForm(v-if="isAddGroup" v-on:close-group="closeNewGroup()")
+            skillCard(v-for="category in categories" :category="category" v-bind:key="category.id")
+
 </template>
 
 <script>
-  export default {
+  import { mapActions, mapState } from "vuex";
+  import skillCard from '../skill-card';
+  import skillForm from '../skill-form';
 
+  export default {
+    components: {
+      skillCard,
+      skillForm
+    },
+    data() {
+      return {
+        isAddGroup: false
+      }
+    },
+    computed: {
+      ...mapState('skills', {
+        categories: state => state.categories
+      })
+    },
+    methods: {
+      ...mapActions('skills', ['getSkills']),
+      addNewGroup() {
+        this.isAddGroup = true;
+      },
+      closeNewGroup() {
+        this.isAddGroup = false;
+      }
+    },
+    created() {
+      this.getSkills();
+    }
   }
 </script>
+
+
