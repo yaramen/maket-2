@@ -19,7 +19,16 @@
     },
     methods: {
       ...mapActions('skills', ['addCategory']),
+      ...mapActions(['showTooltip']),
       add() {
+        if(this.title.length === 0) {
+          this.showTooltip({
+            type: 'danger',
+            message: 'Название группы должно быть не пустое'
+          });
+          return;
+        }
+
         this.addCategory(this.title);
         this.$emit('close-group');
       }

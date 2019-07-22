@@ -13,11 +13,13 @@
             td.data-table__name
                 input.input-field(v-model="editingSkill.title")
             td.data-table__percent
-                input.input-field(v-model="editingSkill.percent")
+                input.input-field(type="number" max="100" v-model="editingSkill.percent")
             td.data-table__edit
-                button.data-table__btn(@click="update()") ok
+                button.data-table__btn(@click="update()")
+                    .data-table__icon.-success
             td.data-table__remove
-                button.data-table__btn(@click="undoEdit()") cancel
+                button.data-table__btn(@click="undoEdit()")
+                    .data-table__icon.-cancel
 </template>
 
 <script>
@@ -35,6 +37,7 @@
     },
     methods: {
       ...mapActions('skills', ['removeSkill', 'updateSkill']),
+      ...mapActions(['showTooltip']),
       deleteSkill(skill){
         this.removeSkill(skill)
       },
@@ -46,6 +49,20 @@
         this.isEdit = false;
       },
       update(){
+        if(this.editingSkill.title.length === 0) {
+          this.showTooltip({
+            type: 'danger',
+            message: 'Поле навык должно быть не пустое'
+          });
+          return;
+        }
+        if(+this.editingSkill.percent <= 0 || +this.editingSkill.percent > 100) {
+          this.showTooltip({
+            type: 'danger',
+            message: 'Поле проценты должно быть от 0 до 100'
+          });
+          return;
+        }
         this.updateSkill(this.editingSkill);
         this.isEdit = false;
       }

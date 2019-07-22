@@ -1,6 +1,6 @@
 <template lang="pug">
     .tooltip(:class="`${type} ${isShow ? 'show' : ''}`")
-        .tooltip__message {{message}}
+        .tooltip__message(v-html="message")
         button.tooltip__close(@click="closeTooltip")
 </template>
 
@@ -42,6 +42,7 @@
             position: relative;
             width: 22px;
             height: 22px;
+            margin-left: 10px;
             background-color: transparent;
             border: none;
             cursor: pointer;

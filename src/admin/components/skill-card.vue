@@ -49,7 +49,23 @@
     },
     methods: {
       ...mapActions('skills', ['addSkill', 'removeCategory', 'editCategory']),
+      ...mapActions(['showTooltip']),
       addNewSkill() {
+        if(this.skill.title.length === 0) {
+          this.showTooltip({
+            type: 'danger',
+            message: 'Поле навык должно быть не пустое'
+          });
+          return;
+        }
+        if(+this.skill.percent <= 0 || +this.skill.percent > 100) {
+          this.showTooltip({
+            type: 'danger',
+            message: 'Поле проценты должно быть от 0 до 100'
+          });
+          return;
+        }
+
         this.addSkill({...this.skill})
           .then(() => {
             this.skill.title = "";
