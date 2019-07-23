@@ -53,10 +53,10 @@
         }
 
         const formData = new FormData();
-        formData.append("author", this.review.author);
-        formData.append("occ", this.review.occ);
-        formData.append("text", this.review.text);
-        formData.append("photo", this.review.photo);
+        formData.append("author", this.currReview.author);
+        formData.append("occ", this.currReview.occ);
+        formData.append("text", this.currReview.text);
+        formData.append("photo", this.currReview.photo);
 
         if(this.isAdd) {
           this.addNewReview(formData);

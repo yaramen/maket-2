@@ -5,19 +5,19 @@ import skills from './skills';
 import lock from './lock';
 import tooltip from './tooltip';
 import reviews from './reviews';
+import works from './works';
 
 Vue.use(Vuex);
 
-let store = new Vuex.Store({
+const store = new Vuex.Store({
   modules: {
     user,
     skills,
     lock,
     tooltip,
-    reviews
+    reviews,
+    works
   }
 });
-
-window.store = store;
 
 export default store;

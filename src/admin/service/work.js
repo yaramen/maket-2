@@ -2,18 +2,18 @@ import axios from '../request';
 
 export default class ServiceReview {
   static getAll() {
-    return axios.get('/reviews/147');
+    return axios.get('/works/147');
   }
 
   static add(data) {
-    return axios.post('/reviews', data);
+    return axios.post('/works', data);
   }
 
   static remove(dataId) {
-    return axios.delete(`/reviews/${dataId}`);
+    return axios.delete(`/works/${dataId}`);
   }
 
   static update({formData, id}) {
-    return axios.post(`/reviews/${id}`, formData);
+    return axios.post(`/works/${id}`, formData);
   }
 }
