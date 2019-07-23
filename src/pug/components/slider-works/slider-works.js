@@ -1,26 +1,33 @@
 import Vue from 'vue';
 import slideList from './data';
+import axios from "../../../admin/request";
 
 new Vue({
   el: "#slider-works-component",
   template: '#slider-works',
   data() {
     return {
-      slideList: [],
-      currSlideIndex: 0,
+      dataSlideList: [],
+      currSlideIndex: null,
     };
   },
   computed: {
     currWork() {
-      return this.slideList[this.currSlideIndex];
+      if(this.currSlideIndex === null) {
+        return {};
+      }
+      return this.dataSlideList[this.currSlideIndex];
+    },
+    slideList() {
+      return this.dataSlideList;
     }
   },
   methods: {
     getSlideList() {
-      return slideList.map(item => ({
-        ...item,
-        picture: require(`../../../images/${item.picture}`)
-      }))
+      axios.get('/works/147').then(res => {
+        this.dataSlideList = res.data;
+        this.currSlideIndex = 0
+      })
     },
     changeSlide(index) {
       this.currSlideIndex = index;
@@ -31,13 +38,12 @@ new Vue({
       }
     },
     nextSlide() {
-      if(this.slideList.length - 1 > this.currSlideIndex) {
+      if(this.dataSlideList.length - 1 > this.currSlideIndex) {
         this.currSlideIndex += 1;
       }
     }
   },
   created() {
-    this.slideList = this.getSlideList();
-    console.log(this.slideList);
+    this.getSlideList();
   }
 });

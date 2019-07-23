@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import skills from './data';
+import ServiceSkill from "../../../admin/service/skills";
 
 const skill = {
   template: "#skill",
@@ -12,7 +13,7 @@ const skill = {
 const skillList = {
   template: "#skill-list",
   props: {
-    skills: Object
+    skills: Array
   },
   components: {
     skill
@@ -34,13 +35,35 @@ new Vue({
   template: '#skills-template',
   data() {
     return {
-      skills: []
+      // skills: [],
+      categories: [],
+      categoriesSkills: []
     };
   },
   components: {
     skillsGroup
   },
+  computed: {
+    skills() {
+      return  this.categories.map(category => {
+        category.skills = this.categoriesSkills.filter(skill => skill.category === category.id);
+        return category;
+      });
+    }
+  },
+  methods: {
+    getSkillsData() {
+      const categories =  ServiceSkill.getAllCategories();
+      const skills = ServiceSkill.getSkills();
+      Promise.all([categories, skills])
+        .then(res => {
+          this.categories = res[0].data;
+          this.categoriesSkills = res[1].data;
+        });
+    }
+  },
   created() {
-    this.skills = skills;
+    this.getSkillsData();
+    // this.skills = skills;
   }
 });

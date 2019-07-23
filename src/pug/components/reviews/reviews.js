@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import Flickity from 'vue-flickity';
-import reviews from './data';
+import axios from "../../../admin/request";
 
 new Vue({
   el: "#reviews-container",
   template: "#reviews",
   components: {
-    Flickity
+    Flickity,
   },
   data() {
     return {
@@ -16,7 +16,14 @@ new Vue({
         wrapAround: false,
         groupCells: true,
         cellAlign: "left"
-      }
+      },
+      dataReviews: [],
+      isLoad: false
+    }
+  },
+  computed: {
+    reviews() {
+      return this.dataReviews
     }
   },
   methods: {
@@ -26,12 +33,11 @@ new Vue({
     prev() {
       this.$refs.flickity.previous();
     },
-    requireAvatars() {
-      return reviews.map(item => {
-        return {
-          ...item,
-          avatar: require("../../../images/" + item.avatar)
-        };
+    getReviews() {
+      axios.get('/reviews/147').then(res => {
+        this.dataReviews = res.data;
+        this.isLoad = true;
+        this.updateBtnStatus();
       })
     },
     updateBtnStatus() {
@@ -43,9 +49,6 @@ new Vue({
     }
   },
   created() {
-    this.reviews = this.requireAvatars(reviews);
+    this.getReviews();
   },
-  mounted() {
-    this.updateBtnStatus();
-  }
 });

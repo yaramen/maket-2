@@ -8,7 +8,7 @@ script(type="text/x-template" id="skills-template")
 
 script(type="text/x-template" id="skills-group")
     .skill-list
-        h3.skill-list__title {{skillGroupList.title}}
+        h3.skill-list__title {{skillGroupList.category}}
         skill-list(
             :skills="skillGroupList.skills"
         )
@@ -16,10 +16,10 @@ script(type="text/x-template" id="skills-group")
 
 script(type="text/x-template" id="skill-list")
     ul.skill-list__collection
-        li.skill-list__item(v-for="(percent, skillName) in skills")
+        li.skill-list__item(v-for="currSkill in skills")
             skill(
-                :name="skillName"
-                :percent="percent"
+                :name="currSkill.title"
+                :percent="currSkill.percent"
             )
 
 

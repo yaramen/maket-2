@@ -1,18 +1,18 @@
 script(type="text/x-template" id="reviews")
     .slider-review
         .slider-review__leaf
-            button.slider-review__leaf-btn.-prev(@click="prev()" ref="prev" disabled="disabled")
+            button.slider-review__leaf-btn.-prev(@click="prev()" ref="prev")
                 +icon('arrow-down', 'slider-review__leaf-icon')
             button.slider-review__leaf-btn.-next(@click="next()" ref="next")
                 +icon('arrow-down', 'slider-review__leaf-icon')
-        .slider-review__list
+        .slider-review__list(v-if="isLoad")
             flickity(ref="flickity" :options="flickityOptions")
                 .slider-review__item.carousel-cell(v-for="review in reviews")
                     blockquote.slider-review__content
-                        p.slider-review__message.text {{review.message}}
+                        p.slider-review__message.text {{review.text}}
                         .slider-review__footer
                             .slider-review__avatar
-                                img.slider-review__picture(:src="review.avatar")
+                                img.slider-review__picture(:src="`https://webdev-api.loftschool.com/${review.photo}`")
                             cite.slider-review__author
-                                .slider-review__name {{review.name}}
-                                .slider-review__role {{review.role}}
+                                .slider-review__name {{review.author}}
+                                .slider-review__role {{review.occ}}

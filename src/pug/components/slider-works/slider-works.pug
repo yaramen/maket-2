@@ -20,17 +20,17 @@ include ../../../mixins
     ]
 
 script(type="text/x-template" id="slider-works")
-    slider-works
+    .slider-works
         .slider-works__list
             li(class="slider-works__item -active" :data-slider-number="currSlideIndex + 1")
                 .slider-works__view
-                    img(:src="currWork.picture" class="slider-works__picture")
+                    img(:src="`https://webdev-api.loftschool.com/${currWork.photo}`" class="slider-works__picture")
                     .slider-works__controls
                         .slider-works__toggle-list-wrap
                             ul.slider-works__toggle-list
                                 li(:class="`slider-works__toggle-item ${index === currSlideIndex ? '-active' : ''}`" v-for="(slide, index) in slideList")
                                     button.slider-works__toggle-btn(@click="changeSlide(index)")
-                                        img(:src="slide.picture" class="slider-works__thumbs")
+                                        img(:src="`https://webdev-api.loftschool.com/${slide.photo}`" class="slider-works__thumbs")
                         .slider-works__leaf
                             button.slider-works__leaf-btn.-next(@click="nextSlide()")
                                 +icon('arrow-down', 'slider-works__icon-point')
@@ -40,9 +40,9 @@ script(type="text/x-template" id="slider-works")
                                 span.visually-hidden Предыдущий
                 .slider-works__content
                     .slider-works__tags
-                         .slider-works__tag(v-for="tag in currWork.tags" v-html="tag")
+                         .slider-works__tag(v-for="tag in []" v-html="tag")
                     h3.slider-works__title.title(v-html="currWork.title")
-                    p.slider-works__desc.text-black(v-html="currWork.desc")
+                    p.slider-works__desc.text-black(v-html="currWork.description")
                     a.slider-works__link(:href="currWork.link")
                         +icon('link', 'slider-works__icon-link')
                         .link Посмотреть сайт
