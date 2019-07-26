@@ -34,16 +34,19 @@ export default {
     addNewReview({commit}, review) {
       withLock(commit, ServiceReview.add(review), response => {
         commit('ADD_REVIEW', response.data);
+        tooltipShow(commit, 'success', 'Запись добавлена');
       });
     },
     removeReview({commit}, reviewId) {
       withLock(commit, ServiceReview.remove(reviewId), response => {
         commit('REMOVE_REVIEW', reviewId);
+        tooltipShow(commit, 'success', 'Запись удалена');
       });
     },
     updateReview({commit}, data) {
       withLock(commit, ServiceReview.update(data), response => {
         commit('UPDATE_REVIEW', response.data.review);
+        tooltipShow(commit, 'success', 'Запись обновлена');
       });
     }
   }

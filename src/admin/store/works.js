@@ -1,4 +1,4 @@
-import {withLock} from "../utils";
+import {tooltipShow, withLock} from "../utils";
 import ServiceWork from "../service/work";
 
 export default {
@@ -34,16 +34,19 @@ export default {
     addNewWork({commit}, work) {
       withLock(commit, ServiceWork.add(work), response => {
         commit('ADD_WORK', response.data);
+        tooltipShow(commit, 'success', 'Запись добавлена');
       });
     },
     removeWork({commit}, workId) {
       withLock(commit, ServiceWork.remove(workId), response => {
         commit('REMOVE_WORK', workId);
+        tooltipShow(commit, 'success', 'Запись удалена');
       });
     },
     updateWork({commit}, data) {
       withLock(commit, ServiceWork.update(data), response => {
         commit('UPDATE_WORK', response.data.work);
+        tooltipShow(commit, 'success', 'Запись обновлена');
       });
     }
   }
