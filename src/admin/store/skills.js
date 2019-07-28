@@ -45,7 +45,6 @@ export default {
       })
     },
     ADD_CATEGORY: (state, category) => {
-      console.log(category);
       category.skills = [];
       state.categories = [category, ...state.categories]
     },
@@ -63,7 +62,8 @@ export default {
   },
   actions: {
     getSkills({commit}) {
-      const categories =  ServiceSkill.getAllCategories();
+      const userId = localStorage.getItem('userId');
+      const categories =  ServiceSkill.getAllCategories(userId);
       const skills = ServiceSkill.getSkills();
       Promise.all([categories, skills])
         .then(res => {

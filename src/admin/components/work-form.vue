@@ -78,8 +78,6 @@
         formData.append("techs", this.currWork.techs);
         formData.append("photo", this.currWork.photo);
 
-        console.log(this.currWork);
-
         if(this.isAdd) {
           this.addNewWork(formData);
         } else {

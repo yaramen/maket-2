@@ -19,6 +19,16 @@ test('На странице есть кнопка “Авторизоватьс�
     })
 });
 
+test('Есть форма', () => {
+  return client
+    .isExisting('.auth__form')
+    .then(browsers => {
+      for (const browserName in browsers) {
+        expect(browsers[browserName]).toBe(true);
+      }
+    })
+});
+
 
 test('Форма имеет все необходимые поля', () => {
   return client
@@ -31,10 +41,26 @@ test('Форма имеет все необходимые поля', () => {
     })
 });
 
-test('Показывается загрузка при отправке данных', () => {
+
+test('Кнопка “Отправить” заблокирована до тех пор, пока не введены все необходимые данные', () => {
   return client
+    .isEnabled('.auth__send').then(browsers => {
+      for (const browserName in browsers) {
+        expect(browsers[browserName]).toBe(false);
+      }
+    })
     .setValue('.auth__field.-login', 'yara')
+    .isEnabled('.auth__send').then(browsers => {
+      for (const browserName in browsers) {
+        expect(browsers[browserName]).toBe(false);
+      }
+    })
     .setValue('.auth__field.-password', 'yara')
+    .isEnabled('.auth__send').then(browsers => {
+      for (const browserName in browsers) {
+        expect(browsers[browserName]).toBe(true);
+      }
+    })
     .submitForm('.auth__form')
     .isExisting('.main.-lock')
     .then(browsers => {

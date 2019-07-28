@@ -27,7 +27,8 @@ export default {
   },
   actions: {
     getAllWorks({commit}) {
-      withLock(commit, ServiceWork.getAll(), response => {
+      const userId = localStorage.getItem('userId');
+      withLock(commit, ServiceWork.getAll(userId), response => {
         commit('SET_WORK', response.data);
       });
     },

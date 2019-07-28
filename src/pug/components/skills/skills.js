@@ -53,7 +53,8 @@ new Vue({
   },
   methods: {
     getSkillsData() {
-      const categories =  ServiceSkill.getAllCategories();
+      const userId = localStorage.getItem('userId');
+      const categories =  ServiceSkill.getAllCategories(userId);
       const skills = ServiceSkill.getSkills();
       Promise.all([categories, skills])
         .then(res => {

@@ -27,7 +27,8 @@ export default {
   },
   actions: {
     getAllReviews({commit}) {
-      withLock(commit, ServiceReview.getAll(), response => {
+      const userId = localStorage.getItem('userId');
+      withLock(commit, ServiceReview.getAll(userId), response => {
             commit('SET_REVIEW', response.data);
       });
     },

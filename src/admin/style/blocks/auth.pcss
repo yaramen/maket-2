@@ -71,7 +71,12 @@
 
 
     &__field-group {
-
+        position: relative;
+        &.-no-valid {
+            .auth__error {
+                display: block;
+            }
+        }
     }
 
     &__label {
@@ -128,6 +133,35 @@
 
         &:hover, &:focus {
             background: linear-gradient(to right, #5500f2, #ad00ed);
+        }
+
+        &:disabled {
+            background: linear-gradient(to right, #ccc, #aaa);
+        }
+    }
+
+    &__error {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-top: -40px;
+        color: #ffffff;
+        background-color: #cd1515;
+        padding: 12px 20px;
+        transform: translateX(-50%);
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            margin-left: -15px;
+            background-color: #cd1515;
+            transform: rotate(45deg);
+            z-index: -1;
         }
     }
 }

@@ -1,8 +1,8 @@
 import axios from '../request';
 
 export default class ServiceSkill {
-  static getAllCategories() {
-    return axios.get('/categories/147')
+  static getAllCategories(userId) {
+    return axios.get(`/categories/${userId}`)
   }
 
   static addNewCategory(title) {

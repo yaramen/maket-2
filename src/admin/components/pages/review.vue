@@ -43,7 +43,6 @@
               el.id === this.editingReviewId
           )};
         }
-        console.log(rst);
         return rst;
       }
     },

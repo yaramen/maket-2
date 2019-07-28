@@ -1,8 +1,8 @@
 import axios from '../request';
 
 export default class ServiceReview {
-  static getAll() {
-    return axios.get('/reviews/147');
+  static getAll(userId) {
+    return axios.get(`/reviews/${userId}`);
   }
 
   static add(data) {
